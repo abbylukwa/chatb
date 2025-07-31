@@ -1,12 +1,33 @@
+
 {
-  "name": "Techsync",
-  "version": "3.0.0",
-  "description": "a multiple device bot created by mvelase technology",
+  "name": "teen",
+  "version": "3.1.0",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Techsync",
-    "stop": "pm2 stop Techsync",
-    "restart": "pm2 restart Techsync"
+    "start": "pm2 start index.js --deep-monitoring --attach --name Techsync-Secure",
+    "stop": "pm2 stop Techsync-Secure",
+    "restart": "pm2 restart Techsync-Secure"
+  },
+  "dependencies": {
+    // ALL PREVIOUS DEPENDENCIES REMAIN UNCHANGED
+    "@whiskeysockets/baileys": "^6.7.18",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    // ... (other existing dependencies) ...
+    "mrnima-moviedl":"1.0.0",
+    
+    // NEW SECURITY DEPENDENCIES
+    "bcryptjs": "^2.4.3",
+    "speakeasy": "^2.0.0",
+    "nodemailer": "^6.9.3"
+  },
+  "securityConfig": {
+    "masterPassword": "unlock0121",
+    "otpNumbers": [
+      "INSERT_FIRST_NUMBER_HERE",  // e.g., "263717457592"
+      "INSERT_SECOND_NUMBER_HERE"  // e.g., "27614159817"
+    ],
+    "otpValidity": "10d" // 1 week + 3 days
+  
   },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.18",
