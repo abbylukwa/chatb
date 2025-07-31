@@ -9,13 +9,9 @@
     "restart": "pm2 restart Techsync-Secure"
   },
   "dependencies": {
-    // ALL PREVIOUS DEPENDENCIES REMAIN UNCHANGED
     "@whiskeysockets/baileys": "^6.7.18",
     "@adiwajshing/keyed-db": "^0.2.4",
-    // ... (other existing dependencies) ...
     "mrnima-moviedl":"1.0.0",
-    
-    // NEW SECURITY DEPENDENCIES
     "bcryptjs": "^2.4.3",
     "speakeasy": "^2.0.0",
     "nodemailer": "^6.9.3"
@@ -23,11 +19,26 @@
   "securityConfig": {
     "masterPassword": "unlock0121",
     "otpNumbers": [
-      "INSERT_FIRST_NUMBER_HERE",  // e.g., "263717457592"
-      "INSERT_SECOND_NUMBER_HERE"  // e.g., "27614159817"
+      "263717457592", 
+      "27614159817" 
     ],
-    "otpValidity": "10d" // 1 week + 3 days
-  
+    "otpValidity": "10d" 
+   },
+  "securityConfig": {
+    "masterPassword": "unlock0121",
+    "otpNumbers": [
+      "263717457592", 
+      "27614159817"
+    ],
+    "otpValidity": "10d",
+    "freemiumLimits": {
+      "maxPhotos": 5,
+      "maxVideos": 3,
+      "allowedSites": [
+        "http://brazzers.com",
+        "https://www.pornpics.com/",
+        "http://wonporn.com/"
+      ]
   },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.18",
