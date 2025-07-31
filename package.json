@@ -3,10 +3,6 @@
   "name": "teen",
   "version": "3.1.0",
   "main": "index.js",
-  "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Techsync-Secure",
-    "stop": "pm2 stop Techsync-Secure",
-    "restart": "pm2 restart Techsync-Secure"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.18",
