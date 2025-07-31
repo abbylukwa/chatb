@@ -1,10 +1,9 @@
 {
-    "bot-name": "Techsync",
-    "description": "a whatsapp bot created by mvelase technology",
-    "logo": "https://files.catbox.moe/sdv3qh.png",
+    "bot-name": "Teens",
+    "description": "Horny",
     "keywords": ["bot"],
     "documentation-link": "https://techsync-session-id8.onrender.com",
-    "owner-verification":"mvelaseaitechnology@gmail.com",
+    "owner-verification":"abbylukwa@gmail.com",
   
     "env": {
     "SESSION_ID": {
