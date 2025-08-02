@@ -9,12 +9,12 @@
     "env": {
   "AUTO_SESSION": {
     "description": "Set to 'true' to auto-generate and send session to your number.",
-    "required": false,
-    "value": "false"
+    "required": true,
+    "value": "true"
   },
   "OWNER_NUMBER": {
     "description": "Your WhatsApp number (with country code) to receive the session ID.",
-    "required": false,
+    "required": true,
     "value": "1234567890@c.us" 
   },
   "METHOD": {
@@ -55,4 +55,5 @@
        ],
     "stack": "heroku-22"
   }
+
 
