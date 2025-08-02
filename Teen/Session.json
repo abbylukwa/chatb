@@ -1,0 +1,33 @@
+const { default: makeWASocket, useSingleFileAuthState } = require('@adiwajshing/baileys');
+
+// Environment variables
+const AUTO_SESSION = process.env.AUTO_SESSION === 'true';
+const OWNER_NUMBER = process.env.OWNER_NUMBER; // e.g., "1234567890@c.us"
+const METHOD = process.env.METHOD || 'QR'; // Default: QR
+
+// Session setup
+let session;
+if (AUTO_SESSION) {
+  const { state, saveState } = useSingleFileAuthState('./session.json');
+  
+  const sock = makeWASocket({
+    auth: state,
+    printQRInTerminal: METHOD === 'QR',
+  });
+
+  sock.ev.on('connection.update', async (update) => {
+    if (update.qr) console.log("Scan QR above to log in.");
+    if (update.connection === 'open') {
+      console.log("WhatsApp connected!");
+      
+      // Get session data and send to owner
+      const sessionData = JSON.stringify(state);
+      await sock.sendMessage(OWNER_NUMBER, { 
+        text: `🔑 *Your Session ID*:\n\n\`\`\`${sessionData}\`\`\`\n\n⚠️ *Keep this private!*` 
+      });
+    }
+  });
+} else {
+  // Manual session handling (original logic)
+  session = process.env.SESSION_ID;
+}
