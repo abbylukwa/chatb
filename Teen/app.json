@@ -7,14 +7,21 @@
     "success_url": "/",
   
     "env": {
-      "SESSION_ID": {
-        "description": "Put your session id.",
-        "required": true
-      },  
-      "METHOD": {
-        "description": "Type your connection method. if you connect with qr , add 'QR', else if pair, add PAIR'.",
-        "required": true
-      },  
+  "AUTO_SESSION": {
+    "description": "Set to 'true' to auto-generate and send session to your number.",
+    "required": false,
+    "value": "false"
+  },
+  "OWNER_NUMBER": {
+    "description": "Your WhatsApp number (with country code) to receive the session ID.",
+    "required": false,
+    "value": "1234567890@c.us" 
+  },
+  "METHOD": {
+    "description": "Connection method: 'QR' or 'PAIR'.",
+    "required": true
+  }
+}
       "ALWAYS_ONLINE": {
         "description": "Type true or false for make your whatsapp account always online or offline.",
         "required": false
@@ -48,3 +55,4 @@
        ],
     "stack": "heroku-22"
   }
+
